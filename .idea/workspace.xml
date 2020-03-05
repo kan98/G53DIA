@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4416061e-2a98-4adf-bf08-f2343b18ce51" name="Default Changelist" comment="" />
+    <list default="true" id="4416061e-2a98-4adf-bf08-f2343b18ce51" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/Helpers.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/Helpers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/Reactive.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/Reactive.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/Helpers.java" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/Helpers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/Reactive.java" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/Reactive.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +27,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1YG0yLy3nANxF7Wdcb9MfhS2jOP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -25,6 +39,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/G53DIA-src/Makefile" />
@@ -32,7 +47,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.Simulator">
+  <component name="RunManager" selected="Application.Evaluator">
     <configuration name="Evaluator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="uk.ac.nott.cs.g53dia.simulator.Evaluator" />
       <module name="G53DIA-src" />
@@ -73,8 +88,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Simulator" />
         <item itemvalue="Application.Evaluator" />
+        <item itemvalue="Application.Simulator" />
       </list>
     </recent_temporary>
   </component>
@@ -94,7 +109,7 @@
       <workItem from="1582892535695" duration="10075000" />
       <workItem from="1583156854120" duration="31015000" />
       <workItem from="1583329981357" duration="15917000" />
-      <workItem from="1583354527827" duration="4309000" />
+      <workItem from="1583354527827" duration="5799000" />
     </task>
     <servers />
   </component>
@@ -138,38 +153,38 @@
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="690" y="258" width="530" height="605" key="FileChooserDialogImpl/0.34.1920.1046@0.34.1920.1046" timestamp="1583267173268" />
-    <state width="1862" height="218" key="GridCell.Tab.0.bottom" timestamp="1583408023545">
+    <state width="1862" height="218" key="GridCell.Tab.0.bottom" timestamp="1583411128050">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.0.bottom/0.34.1920.1046@0.34.1920.1046" timestamp="1583408023545" />
-    <state width="1862" height="218" key="GridCell.Tab.0.center" timestamp="1583408023544">
+    <state width="1862" height="218" key="GridCell.Tab.0.bottom/0.34.1920.1046@0.34.1920.1046" timestamp="1583411128050" />
+    <state width="1862" height="218" key="GridCell.Tab.0.center" timestamp="1583411128049">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.0.center/0.34.1920.1046@0.34.1920.1046" timestamp="1583408023544" />
-    <state width="1862" height="218" key="GridCell.Tab.0.left" timestamp="1583408023544">
+    <state width="1862" height="218" key="GridCell.Tab.0.center/0.34.1920.1046@0.34.1920.1046" timestamp="1583411128049" />
+    <state width="1862" height="218" key="GridCell.Tab.0.left" timestamp="1583411128049">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.0.left/0.34.1920.1046@0.34.1920.1046" timestamp="1583408023544" />
-    <state width="1862" height="218" key="GridCell.Tab.0.right" timestamp="1583408023545">
+    <state width="1862" height="218" key="GridCell.Tab.0.left/0.34.1920.1046@0.34.1920.1046" timestamp="1583411128049" />
+    <state width="1862" height="218" key="GridCell.Tab.0.right" timestamp="1583411128050">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.0.right/0.34.1920.1046@0.34.1920.1046" timestamp="1583408023545" />
-    <state width="1862" height="218" key="GridCell.Tab.1.bottom" timestamp="1583408023546">
+    <state width="1862" height="218" key="GridCell.Tab.0.right/0.34.1920.1046@0.34.1920.1046" timestamp="1583411128050" />
+    <state width="1862" height="218" key="GridCell.Tab.1.bottom" timestamp="1583411127681">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.1.bottom/0.34.1920.1046@0.34.1920.1046" timestamp="1583408023546" />
-    <state width="1862" height="218" key="GridCell.Tab.1.center" timestamp="1583408023546">
+    <state width="1862" height="218" key="GridCell.Tab.1.bottom/0.34.1920.1046@0.34.1920.1046" timestamp="1583411127681" />
+    <state width="1862" height="218" key="GridCell.Tab.1.center" timestamp="1583411127681">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.1.center/0.34.1920.1046@0.34.1920.1046" timestamp="1583408023546" />
-    <state width="1862" height="218" key="GridCell.Tab.1.left" timestamp="1583408023546">
+    <state width="1862" height="218" key="GridCell.Tab.1.center/0.34.1920.1046@0.34.1920.1046" timestamp="1583411127681" />
+    <state width="1862" height="218" key="GridCell.Tab.1.left" timestamp="1583411127680">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.1.left/0.34.1920.1046@0.34.1920.1046" timestamp="1583408023546" />
-    <state width="1862" height="218" key="GridCell.Tab.1.right" timestamp="1583408023546">
+    <state width="1862" height="218" key="GridCell.Tab.1.left/0.34.1920.1046@0.34.1920.1046" timestamp="1583411127680" />
+    <state width="1862" height="218" key="GridCell.Tab.1.right" timestamp="1583411127681">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.1.right/0.34.1920.1046@0.34.1920.1046" timestamp="1583408023546" />
+    <state width="1862" height="218" key="GridCell.Tab.1.right/0.34.1920.1046@0.34.1920.1046" timestamp="1583411127681" />
     <state x="329" y="209" width="1251" height="703" key="caller.chooser.dialog" timestamp="1583159362336">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>

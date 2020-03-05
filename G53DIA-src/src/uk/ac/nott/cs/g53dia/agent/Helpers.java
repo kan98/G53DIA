@@ -24,7 +24,7 @@ public class Helpers {
             if (cellCharge != 0) {
                 cellCharge -= 4;
             }
-            if (minDistance >= cellCharge) {
+            if (minDistance >= cellCharge || (minDistance < 5 && cellCharge < 100)) {
                 return closestPoint;
             } else {
                 return null;

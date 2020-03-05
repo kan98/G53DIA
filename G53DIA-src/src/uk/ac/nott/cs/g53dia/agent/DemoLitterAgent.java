@@ -119,17 +119,6 @@ public class DemoLitterAgent extends LitterAgent {
 			}
 		}
 
-//		Point closestStation = reactive.reactiveStationStop(getCurrentCell(view),
-//				getWasteLevel(), getRecyclingLevel(), wasteStations, recyclingStations);
-//		if (closestStation != null && !getCurrentCell(view).getPoint().equals(closestStation)) {
-//			stateList = new ArrayList<>();
-//			points = new ArrayList<>();
-//
-//			points.add(0, closestStation);
-//			stateList.add(0, state.LITTER_DROP_OFF);
-//			currentState = state.MOVE_TO_POINT;
-//		}
-
 		Point closestRechargePoint = reactive.reactiveRefuel(getCurrentCell(view), getChargeLevel(), rechargePoints);
 		if(closestRechargePoint != null) {
 			if (currentState != state.REFUEL && !stateList.contains(state.REFUEL)) {
