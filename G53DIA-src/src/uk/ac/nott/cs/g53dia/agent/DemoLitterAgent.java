@@ -34,7 +34,6 @@ public class DemoLitterAgent extends LitterAgent {
 		this.r = r;
 	}
 
-	Helpers helpers = new Helpers();
 	Reactive reactive = new Reactive();
 	Deliberative deliberative = new Deliberative();
 
@@ -49,7 +48,7 @@ public class DemoLitterAgent extends LitterAgent {
 		REFUEL
 	}
 
-	private List<Point> points = new ArrayList<>();
+	private List<Cell> cellPoints = new ArrayList<>();
 	private List<state> stateList = new ArrayList<>();
 
 	protected List<Cell> recyclingBins = new ArrayList<>();
@@ -79,11 +78,13 @@ public class DemoLitterAgent extends LitterAgent {
 
 	private state getNextState(Cell[][] view) {
 		boolean isEqualPosition = false;
-		Point currentPoint = getCurrentCell(view).getPoint();
 		if (currentState == state.MOVE_TO_POINT) {
-			isEqualPosition = getCurrentCell(view).getPoint().equals(points.get(0));
+			if (stateList.get(0) == state.MOVE_TO_POINT) {
+				stateList.remove(0);
+			}
+			isEqualPosition = getCurrentCell(view).getPoint().equals(cellPoints.get(0).getPoint());
 			if (isEqualPosition) {
-				points.remove(0);
+				cellPoints.remove(0);
 			}
 		}
 		if (currentState != state.MOVE_TO_POINT || isEqualPosition) {
@@ -107,36 +108,40 @@ public class DemoLitterAgent extends LitterAgent {
 	public Action senseAndAct(Cell[][] view, long timestep) {
 		storeMapInfo(view);
 
-		if (stateList.isEmpty()) {
+		boolean isEqualPosition = false;
+		if (cellPoints.size() > 0) {
+			isEqualPosition = getCurrentCell(view).getPoint().equals(cellPoints.get(0).getPoint());
+		}
+		if (stateList.isEmpty() || (currentState == state.MOVE_TO_POINT && (stateList.get(0) == state.PICKUP_RECYCLING
+				|| stateList.get(0) == state.PICKUP_WASTE) && !isEqualPosition)) {
 			deliberative = new Deliberative();
+
 			deliberative.setVars(getChargeLevel(), MAX_LITTER - getLitterLevel(), 10000 - timestep,
 					getRecyclingLevel(), getWasteLevel(), recyclingBins, wasteBins, recyclingStations,
-					wasteStations, rechargePoints, getCurrentCell(view), currentState);
+					wasteStations, rechargePoints, getCurrentCell(view));
 
 			if (deliberative.getStateList().size() > 0) {
-				points = deliberative.getPointList();
+				if (currentState == state.MOVE_TO_POINT) {
+					currentState = state.FORAGE;
+				}
+				cellPoints = deliberative.getPointList();
 				stateList = deliberative.getStateList();
 			}
 		}
 
-		Point closestRechargePoint = reactive.reactiveRefuel(getCurrentCell(view), getChargeLevel(), rechargePoints);
+		Cell closestRechargePoint = reactive.reactiveRefuel(getCurrentCell(view), getChargeLevel(), rechargePoints);
 		if(closestRechargePoint != null) {
 			if (currentState != state.REFUEL && !stateList.contains(state.REFUEL)) {
 				stateList.add(0, currentState);
 
-				points.add(0, closestRechargePoint);
+				
+				cellPoints.add(0, closestRechargePoint);
 				stateList.add(0, state.REFUEL);
-				if(!stateList.contains(state.REFUEL)) {
-					stateList.add(0, state.MOVE_TO_POINT);
-				}
+				stateList.add(0, state.MOVE_TO_POINT);
 			}
 		}
 
 		currentState = getNextState(view);
-//		if (points.size() > 0) {
-//			System.out.println(points);
-//			System.out.println(stateList);
-//		}
 
 		switch (currentState) {
 			case REFUEL:
@@ -150,11 +155,10 @@ public class DemoLitterAgent extends LitterAgent {
 				WasteBin wasteBin = (WasteBin) getCurrentCell(view);
 				return new LoadAction(wasteBin.getTask());
 			case MOVE_TO_POINT:
-				return new MoveTowardsAction(points.get(0));
+				return new MoveTowardsAction(cellPoints.get(0).getPoint());
 			case FORAGE:
 			default:
-//				return new MoveAction(r.nextInt(8));
-				return new MoveAction(4);
+				return new MoveAction(5);
 		}
 	}
 }

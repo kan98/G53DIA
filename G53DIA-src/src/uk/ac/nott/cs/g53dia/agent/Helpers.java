@@ -5,20 +5,20 @@ import uk.ac.nott.cs.g53dia.library.*;
 import java.util.List;
 
 public class Helpers {
-    public Point findClosest (Point cellLocation, List<Cell> cells) {
+    public Cell findClosest (Point cellLocation, List<Cell> cells) {
         return findClosest(cellLocation, cells, 0);
     }
 
-    public Point findClosest (Point cellLocation, List<Cell> cells, int cellCharge) {
+    public Cell findClosest (Point cellLocation, List<Cell> cells, int cellCharge) {
         int minDistance = cellLocation.distanceTo(cells.get(0).getPoint());
-        Point closestPoint = cells.get(0).getPoint();
+        Cell closestPoint = cells.get(0);
 
         if (!cells.isEmpty()) {
             for (int i=0; i!=cells.size(); i++) {
                 int currentDistance = cellLocation.distanceTo(cells.get(i).getPoint());
                 if (currentDistance < minDistance) {
                     minDistance = currentDistance;
-                    closestPoint = cells.get(i).getPoint();
+                    closestPoint = cells.get(i);
                 }
             }
             if (cellCharge != 0) {

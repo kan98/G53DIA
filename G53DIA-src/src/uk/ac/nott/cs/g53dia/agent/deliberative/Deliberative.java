@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Deliberative {
-    enum focus {
+    public enum focus {
         NONE,
         WASTE,
         RECYCLING
@@ -29,13 +29,15 @@ public class Deliberative {
     Cell currentCell;
 
     List<DemoLitterAgent.state> stateList = new ArrayList<>();
-    List<Point> pointList = new ArrayList<>();
+    List<Cell> pointList = new ArrayList<>();
 
     float highestScoreRatio = -1000;
 
+    Helpers helpers = new Helpers();
+
     public void setVars(int currentCharge, int binCapacity, long timeLeft, int recyclingLevel, int wasteLevel,
             List<Cell> recyclingBins, List<Cell> wasteBins, List<Cell> recyclingPlants,
-            List<Cell> wastePlants, List<Cell> rechargePoints, Cell currentCell, DemoLitterAgent.state currentState) {
+            List<Cell> wastePlants, List<Cell> rechargePoints, Cell currentCell) {
 
         this.currentCharge = currentCharge;
         this.binCapacity = binCapacity;
@@ -49,11 +51,17 @@ public class Deliberative {
 
         this.currentCell = currentCell;
 
+        if (wasteLevel > 0) {
+            currentFocus = focus.WASTE;
+        } else if (recyclingLevel > 0) {
+            currentFocus = focus.RECYCLING;
+        }
+
         search();
     }
 
     private void search() {
-        List<Point> currentSelection = new ArrayList<>();
+        List<Cell> currentSelection = new ArrayList<>();
         focus tempFocus = currentFocus;
         if (tempFocus != focus.WASTE) {
             recyclingBinList = (List<RecyclingBin>)(List<?>) getFilledBins(recyclingBins);
@@ -75,12 +83,11 @@ public class Deliberative {
             }
         }
 
-        Helpers helpers = new Helpers();
         if (currentFocus != focus.NONE) {
             if (currentFocus == focus.RECYCLING) {
-                pointList.add(helpers.findClosest(pointList.get(pointList.size() - 1), recyclingPlants));
+                pointList.add(helpers.findClosest(pointList.get(pointList.size() - 1).getPoint(), recyclingPlants));
             } else if (currentFocus == focus.WASTE) {
-                pointList.add(helpers.findClosest(pointList.get(pointList.size() - 1), wastePlants));
+                pointList.add(helpers.findClosest(pointList.get(pointList.size() - 1).getPoint(), wastePlants));
             }
             stateList.add(DemoLitterAgent.state.MOVE_TO_POINT);
             stateList.add(DemoLitterAgent.state.LITTER_DROP_OFF);
@@ -88,7 +95,7 @@ public class Deliberative {
     }
 
     private void getBestRoute(List<RecyclingBin> recyclingBins, List<WasteBin> wasteBins, int currentScore,
-                                int chargeUsed, List<Point> currentSelection, Point currentPoint, boolean recursion) {
+                                int chargeUsed, List<Cell> currentSelection, Point currentPoint, boolean recursion) {
         if (recyclingBins != null && recyclingBins.size() > 0) {
 
             for (int i=0; i < recyclingBins.size(); i++) {
@@ -102,11 +109,11 @@ public class Deliberative {
                     recursion = false;
                 }
                 List<RecyclingBin> tempRecyclingBins = recyclingBins;
-                List<Point> tempCurrentSelection = currentSelection;
+                List<Cell> tempCurrentSelection = currentSelection;
 
                 int tempScore = tempRecyclingBins.get(i).getTask().getRemaining();
-                Point binLocation = tempRecyclingBins.get(i).getPoint();
-                int tempCharge = currentPoint.distanceTo(binLocation);
+                Cell binLocation = tempRecyclingBins.get(i);
+                int tempCharge = currentPoint.distanceTo(binLocation.getPoint());
 
                 if(tempScore + currentScore < binCapacity && tempCharge + chargeUsed <= currentCharge
                     && tempCharge + chargeUsed <= timeLeft) {
@@ -116,13 +123,16 @@ public class Deliberative {
                     tempCurrentSelection.add(binLocation);
                     tempRecyclingBins.remove(i);
 
-                    if (chargeUsed > 0 && (float)currentScore/chargeUsed >= highestScoreRatio) {
-                        highestScoreRatio = (float)currentScore/chargeUsed;
+                    if (tempRecyclingBins.size() > 0) {
+                        getBestRoute(tempRecyclingBins, null, currentScore, chargeUsed, tempCurrentSelection, binLocation.getPoint(),true);
+                    }
+
+                    Cell stationPoint = helpers.findClosest(binLocation.getPoint(), recyclingPlants);
+                    int stationCost = binLocation.getPoint().distanceTo(stationPoint.getPoint());
+                    if (chargeUsed > 0 && (float)currentScore/(chargeUsed+stationCost) >= highestScoreRatio) {
+                        highestScoreRatio = (float)currentScore/(chargeUsed+stationCost);
                         pointList = tempCurrentSelection;
                         currentFocus = focus.RECYCLING;
-                    }
-                    if (tempRecyclingBins.size() > 0) {
-                        getBestRoute(tempRecyclingBins, null, currentScore, chargeUsed, tempCurrentSelection, binLocation,true);
                     }
                 }
             }
@@ -141,11 +151,11 @@ public class Deliberative {
                     recursion = false;
                 }
                 List<WasteBin> tempWasteBins = wasteBins;
-                List<Point> tempCurrentSelection = currentSelection;
+                List<Cell> tempCurrentSelection = currentSelection;
 
                 int tempScore = tempWasteBins.get(i).getTask().getRemaining();
-                Point binLocation = tempWasteBins.get(i).getPoint();
-                int tempCharge = currentPoint.distanceTo(binLocation);
+                Cell binLocation = tempWasteBins.get(i);
+                int tempCharge = currentPoint.distanceTo(binLocation.getPoint());
 
                 if(tempScore + currentScore < binCapacity && tempCharge + chargeUsed <= currentCharge
                         && tempCharge + chargeUsed <= timeLeft) {
@@ -155,13 +165,16 @@ public class Deliberative {
                     tempCurrentSelection.add(binLocation);
                     tempWasteBins.remove(i);
 
-                    if (chargeUsed > 0 && (float)currentScore/chargeUsed >= highestScoreRatio) {
-                        highestScoreRatio = (float)currentScore/chargeUsed;
+                    if (tempWasteBins.size() > 0) {
+                        getBestRoute(null, tempWasteBins, currentScore, chargeUsed, tempCurrentSelection, binLocation.getPoint(), true);
+                    }
+
+                    Cell stationPoint = helpers.findClosest(binLocation.getPoint(), wastePlants);
+                    int stationCost = binLocation.getPoint().distanceTo(stationPoint.getPoint());
+                    if (chargeUsed > 0 && (float)currentScore/(chargeUsed+stationCost) >= highestScoreRatio) {
+                        highestScoreRatio = (float)currentScore/(chargeUsed+stationCost);
                         pointList = tempCurrentSelection;
                         currentFocus = focus.WASTE;
-                    }
-                    if (tempWasteBins.size() > 0) {
-                        getBestRoute(null, tempWasteBins, currentScore, chargeUsed, tempCurrentSelection, binLocation, true);
                     }
                 }
             }
@@ -190,7 +203,11 @@ public class Deliberative {
         return stateList;
     }
 
-    public List<Point> getPointList() {
+    public List<Cell> getPointList() {
         return pointList;
+    }
+
+    public focus getCurrentFocus() {
+        return currentFocus;
     }
 }

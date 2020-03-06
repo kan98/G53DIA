@@ -8,14 +8,13 @@ import static uk.ac.nott.cs.g53dia.library.LitterAgent.MAX_CHARGE;
 public class Reactive {
     Helpers helpers = new Helpers();
 
-    protected Point reactiveRefuel(Cell cell, int chargeLevel, List<Cell> rechargePoints) {
+    protected Cell reactiveRefuel(Cell cell, int chargeLevel, List<Cell> rechargePoints) {
         if ((chargeLevel <= MAX_CHARGE * 0.3) && !(cell instanceof RechargePoint)) {
-            Point closestRechargePoint = helpers.findClosest(cell.getPoint(), rechargePoints, chargeLevel);
+            Cell closestRechargePoint = helpers.findClosest(cell.getPoint(), rechargePoints, chargeLevel);
             if (closestRechargePoint != null) {
                 return closestRechargePoint;
             }
         }
         return null;
     }
-
 }
