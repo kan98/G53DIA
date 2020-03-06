@@ -22,7 +22,7 @@ public class Helpers {
                 }
             }
             if (cellCharge != 0) {
-                cellCharge -= 4;
+                cellCharge -= 2;
             }
             if (minDistance >= cellCharge || (minDistance < 5 && cellCharge < 100)) {
                 return closestPoint;

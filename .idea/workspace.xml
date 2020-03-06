@@ -2,27 +2,169 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4416061e-2a98-4adf-bf08-f2343b18ce51" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/G53DIA.jar" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/G53DIA.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent$state.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent$state.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/Helpers.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/Helpers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/Reactive.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/Reactive.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/deliberative/Deliberative$focus.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/deliberative/Deliberative$focus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/deliberative/Deliberative.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/deliberative/Deliberative.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent$state.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent$state.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/Helpers.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/Helpers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/Reactive.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/Reactive.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/deliberative/Deliberative$focus.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/deliberative/Deliberative$focus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/deliberative/Deliberative.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/deliberative/Deliberative.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/simulator/Evaluator.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/simulator/Evaluator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/Helpers.java" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/Helpers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/Reactive.java" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/Reactive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/library/RecyclingTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/library/RecyclingTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/library/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/library/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/library/WasteTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/library/WasteTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/deliberative/Deliberative.java" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/deliberative/Deliberative.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/library/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/library/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G53DIA.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/manifest-addition" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/Action.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/Cell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/CellFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/DefaultCell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/DefaultCellFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/DefaultLitterAgentViewerIconFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/DisposeAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/EmptyCell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/Environment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/IllegalActionException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/LitterAgent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/LitterAgentViewer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/LitterAgentViewerIconFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/LitterBin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/LoadAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/MoveAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/MoveTowardsAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/OutOfBatteryException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/Point.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/RechargeAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/RechargePoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/RecyclingBin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/RecyclingStation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/RecyclingTask.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/Task.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/WasteBin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/WasteStation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/WasteTask.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/images/agent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/images/rechargepoint.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/images/recyclingbin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/images/recyclingbin_withtask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/images/recyclingstation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/images/wastebin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/images/wastebin_withtask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/library/images/wastestation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/simulator/Evaluator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/uk/ac/nott/cs/g53dia/simulator/Simulator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/allclasses-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/allclasses-noframe.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/constant-values.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/deprecated-list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/index-all.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/overview-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/overview-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/package-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/serialized-form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/agent/DemoTanker.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/agent/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/agent/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/agent/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/Action.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/ActionFailedException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/Cell.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/CellFactory.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/DefaultCell.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/DefaultCellFactory.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/DefaultLitterAgentViewerIconFactory.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/DefaultTankerViewerIconFactory.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/DisposeAction.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/DisposeWasteAction.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/EmptyCell.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/Environment.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/FallibleAction.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/FuelPump.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/IllegalActionException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/LitterAgent.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/LitterAgentViewer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/LitterAgentViewerIconFactory.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/LitterBin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/LoadAction.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/LoadWasteAction.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/MoveAction.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/MoveTowardsAction.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/OutOfBatteryException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/OutOfFuelException.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/Point.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/RechargeAction.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/RechargePoint.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/RecyclingBin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/RecyclingStation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/RecyclingTask.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/RefuelAction.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/Station.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/Tanker.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/TankerViewer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/TankerViewerIconFactory.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/Task.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/WasteBin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/WasteStation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/WasteTask.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/Well.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/library/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/simulator/Evaluator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/simulator/Simulator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/simulator/package-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/simulator/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/uk/ac/nott/cs/g53dia/simulator/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dosmake.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/license.terms" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/manifest-addition" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/Action.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/Cell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/CellFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/DefaultCell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/DefaultCellFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/DefaultLitterAgentViewerIconFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/DisposeAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/EmptyCell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/Environment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/IllegalActionException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/LitterAgent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/LitterAgentViewer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/LitterAgentViewerIconFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/LitterBin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/LoadAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/MoveAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/MoveTowardsAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/OutOfBatteryException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/Point.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/RechargeAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/RechargePoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/RecyclingBin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/RecyclingStation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/RecyclingTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/Task.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/WasteBin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/WasteStation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/WasteTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/images/agent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/images/rechargepoint.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/images/recyclingbin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/images/recyclingbin_withtask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/images/recyclingstation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/images/wastebin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/images/wastebin_withtask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/library/images/wastestation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/simulator/Evaluator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uk/ac/nott/cs/g53dia/simulator/Simulator.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,6 +264,7 @@
       <workItem from="1583156854120" duration="31015000" />
       <workItem from="1583329981357" duration="15917000" />
       <workItem from="1583354527827" duration="29755000" />
+      <workItem from="1583492100897" duration="4100000" />
     </task>
     <servers />
   </component>
@@ -165,38 +308,38 @@
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="690" y="258" width="530" height="605" key="FileChooserDialogImpl/0.34.1920.1046@0.34.1920.1046" timestamp="1583267173268" />
-    <state width="1862" height="218" key="GridCell.Tab.0.bottom" timestamp="1583455577191">
+    <state width="1862" height="259" key="GridCell.Tab.0.bottom" timestamp="1583498097217">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.0.bottom/0.34.1920.1046@0.34.1920.1046" timestamp="1583455577191" />
-    <state width="1862" height="218" key="GridCell.Tab.0.center" timestamp="1583455577190">
+    <state width="1862" height="259" key="GridCell.Tab.0.bottom/0.34.1920.1046@0.34.1920.1046" timestamp="1583498097217" />
+    <state width="1862" height="259" key="GridCell.Tab.0.center" timestamp="1583498097217">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.0.center/0.34.1920.1046@0.34.1920.1046" timestamp="1583455577190" />
-    <state width="1862" height="218" key="GridCell.Tab.0.left" timestamp="1583455577189">
+    <state width="1862" height="259" key="GridCell.Tab.0.center/0.34.1920.1046@0.34.1920.1046" timestamp="1583498097217" />
+    <state width="1862" height="259" key="GridCell.Tab.0.left" timestamp="1583498097217">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.0.left/0.34.1920.1046@0.34.1920.1046" timestamp="1583455577189" />
-    <state width="1862" height="218" key="GridCell.Tab.0.right" timestamp="1583455577190">
+    <state width="1862" height="259" key="GridCell.Tab.0.left/0.34.1920.1046@0.34.1920.1046" timestamp="1583498097217" />
+    <state width="1862" height="259" key="GridCell.Tab.0.right" timestamp="1583498097217">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.0.right/0.34.1920.1046@0.34.1920.1046" timestamp="1583455577190" />
-    <state width="1862" height="218" key="GridCell.Tab.1.bottom" timestamp="1583455577192">
+    <state width="1862" height="259" key="GridCell.Tab.0.right/0.34.1920.1046@0.34.1920.1046" timestamp="1583498097217" />
+    <state width="1862" height="218" key="GridCell.Tab.1.bottom" timestamp="1583497829194">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.1.bottom/0.34.1920.1046@0.34.1920.1046" timestamp="1583455577192" />
-    <state width="1862" height="218" key="GridCell.Tab.1.center" timestamp="1583455577191">
+    <state width="1862" height="218" key="GridCell.Tab.1.bottom/0.34.1920.1046@0.34.1920.1046" timestamp="1583497829194" />
+    <state width="1862" height="218" key="GridCell.Tab.1.center" timestamp="1583497829194">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.1.center/0.34.1920.1046@0.34.1920.1046" timestamp="1583455577191" />
-    <state width="1862" height="218" key="GridCell.Tab.1.left" timestamp="1583455577191">
+    <state width="1862" height="218" key="GridCell.Tab.1.center/0.34.1920.1046@0.34.1920.1046" timestamp="1583497829194" />
+    <state width="1862" height="218" key="GridCell.Tab.1.left" timestamp="1583497829194">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.1.left/0.34.1920.1046@0.34.1920.1046" timestamp="1583455577191" />
-    <state width="1862" height="218" key="GridCell.Tab.1.right" timestamp="1583455577192">
+    <state width="1862" height="218" key="GridCell.Tab.1.left/0.34.1920.1046@0.34.1920.1046" timestamp="1583497829194" />
+    <state width="1862" height="218" key="GridCell.Tab.1.right" timestamp="1583497829194">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.1.right/0.34.1920.1046@0.34.1920.1046" timestamp="1583455577192" />
+    <state width="1862" height="218" key="GridCell.Tab.1.right/0.34.1920.1046@0.34.1920.1046" timestamp="1583497829194" />
     <state x="329" y="209" width="1251" height="703" key="caller.chooser.dialog" timestamp="1583159362336">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>

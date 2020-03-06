@@ -63,14 +63,15 @@ public class Deliberative {
     private void search() {
         List<Cell> currentSelection = new ArrayList<>();
         focus tempFocus = currentFocus;
+        recyclingBinList = (List<RecyclingBin>)(List<?>) getFilledBins(recyclingBins);
+        wasteBinList = (List<WasteBin>)(List<?>) getFilledBins(wasteBins);
+
         if (tempFocus != focus.WASTE) {
-            recyclingBinList = (List<RecyclingBin>)(List<?>) getFilledBins(recyclingBins);
             getBestRoute(recyclingBinList, null, 0, 0, currentSelection, currentCell.getPoint(), false);
         }
 
         currentSelection = new ArrayList<>();
         if (tempFocus != focus.RECYCLING) {
-            wasteBinList = (List<WasteBin>)(List<?>) getFilledBins(wasteBins);
             getBestRoute(null, wasteBinList, 0, 0, currentSelection, currentCell.getPoint(),false);
         }
 
@@ -179,6 +180,35 @@ public class Deliberative {
                 }
             }
         }
+    }
+
+    private float nextMovePotential(Cell stationLocation) {
+        int score;
+        int distance;
+        float topScore = 0;
+        for (RecyclingBin recyclingBin : recyclingBinList) {
+            score = recyclingBin.getTask().getRemaining();
+            distance = stationLocation.getPoint().distanceTo(recyclingBin.getPoint());
+
+            Cell stationPoint = helpers.findClosest(recyclingBin.getPoint(), recyclingPlants);
+            distance += recyclingBin.getPoint().distanceTo(stationPoint.getPoint());
+
+            if ((float)score/distance > topScore) {
+                topScore = (float)score/distance;
+            }
+        }
+        for (WasteBin wasteBin : wasteBinList) {
+            score = wasteBin.getTask().getRemaining();
+            distance = stationLocation.getPoint().distanceTo(wasteBin.getPoint());
+
+            Cell stationPoint = helpers.findClosest(wasteBin.getPoint(), wastePlants);
+            distance += wasteBin.getPoint().distanceTo(stationPoint.getPoint());
+
+            if ((float)score/distance > topScore) {
+                topScore = (float)score/distance;
+            }
+        }
+        return (topScore * 0.25f);
     }
 
     private List<Cell> getFilledBins(List<Cell> bins) {
