@@ -1,4 +1,4 @@
-package uk.ac.nott.cs.g53dia.agent.deliberative;
+package uk.ac.nott.cs.g53dia.agent;
 
 import uk.ac.nott.cs.g53dia.agent.DemoLitterAgent;
 import uk.ac.nott.cs.g53dia.agent.Helpers;
@@ -36,8 +36,8 @@ public class Deliberative {
     Helpers helpers = new Helpers();
 
     public void setVars(int currentCharge, int binCapacity, long timeLeft, int recyclingLevel, int wasteLevel,
-            List<Cell> recyclingBins, List<Cell> wasteBins, List<Cell> recyclingPlants,
-            List<Cell> wastePlants, List<Cell> rechargePoints, Cell currentCell) {
+                        List<Cell> recyclingBins, List<Cell> wasteBins, List<Cell> recyclingPlants,
+                        List<Cell> wastePlants, List<Cell> rechargePoints, Cell currentCell) {
 
         this.currentCharge = currentCharge;
         this.binCapacity = binCapacity;
@@ -96,9 +96,8 @@ public class Deliberative {
     }
 
     private void getBestRoute(List<RecyclingBin> recyclingBins, List<WasteBin> wasteBins, int currentScore,
-                                int chargeUsed, List<Cell> currentSelection, Point currentPoint, boolean recursion) {
+                              int chargeUsed, List<Cell> currentSelection, Point currentPoint, boolean recursion) {
         if (recyclingBins != null && recyclingBins.size() > 0) {
-
             for (int i=0; i < recyclingBins.size(); i++) {
                 if (!recursion) {
                     currentScore = 0;
@@ -106,18 +105,20 @@ public class Deliberative {
                     currentSelection = new ArrayList<>();
                     currentPoint = this.currentCell.getPoint();
                     recyclingBins = recyclingBinList;
-                } else {
-                    recursion = false;
                 }
+                recursion = false;
                 List<RecyclingBin> tempRecyclingBins = recyclingBins;
                 List<Cell> tempCurrentSelection = currentSelection;
 
                 int tempScore = tempRecyclingBins.get(i).getTask().getRemaining();
+                if (tempScore > binCapacity - currentScore) {
+                    tempScore = binCapacity - currentScore;
+                }
                 Cell binLocation = tempRecyclingBins.get(i);
                 int tempCharge = currentPoint.distanceTo(binLocation.getPoint());
 
                 if(tempScore + currentScore < binCapacity && tempCharge + chargeUsed <= currentCharge
-                    && tempCharge + chargeUsed <= timeLeft) {
+                        && tempCharge + chargeUsed <= timeLeft) {
                     currentScore += tempScore;
                     chargeUsed += tempCharge;
 
@@ -148,13 +149,15 @@ public class Deliberative {
                     currentSelection = new ArrayList<>();
                     currentPoint = this.currentCell.getPoint();
                     wasteBins = wasteBinList;
-                } else {
-                    recursion = false;
                 }
+                recursion = false;
                 List<WasteBin> tempWasteBins = wasteBins;
                 List<Cell> tempCurrentSelection = currentSelection;
 
                 int tempScore = tempWasteBins.get(i).getTask().getRemaining();
+                if (tempScore > binCapacity - currentScore) {
+                    tempScore = binCapacity - currentScore;
+                }
                 Cell binLocation = tempWasteBins.get(i);
                 int tempCharge = currentPoint.distanceTo(binLocation.getPoint());
 
@@ -180,35 +183,6 @@ public class Deliberative {
                 }
             }
         }
-    }
-
-    private float nextMovePotential(Cell stationLocation) {
-        int score;
-        int distance;
-        float topScore = 0;
-        for (RecyclingBin recyclingBin : recyclingBinList) {
-            score = recyclingBin.getTask().getRemaining();
-            distance = stationLocation.getPoint().distanceTo(recyclingBin.getPoint());
-
-            Cell stationPoint = helpers.findClosest(recyclingBin.getPoint(), recyclingPlants);
-            distance += recyclingBin.getPoint().distanceTo(stationPoint.getPoint());
-
-            if ((float)score/distance > topScore) {
-                topScore = (float)score/distance;
-            }
-        }
-        for (WasteBin wasteBin : wasteBinList) {
-            score = wasteBin.getTask().getRemaining();
-            distance = stationLocation.getPoint().distanceTo(wasteBin.getPoint());
-
-            Cell stationPoint = helpers.findClosest(wasteBin.getPoint(), wastePlants);
-            distance += wasteBin.getPoint().distanceTo(stationPoint.getPoint());
-
-            if ((float)score/distance > topScore) {
-                topScore = (float)score/distance;
-            }
-        }
-        return (topScore * 0.25f);
     }
 
     private List<Cell> getFilledBins(List<Cell> bins) {

@@ -1,6 +1,5 @@
 package uk.ac.nott.cs.g53dia.agent;
 
-import uk.ac.nott.cs.g53dia.agent.deliberative.Deliberative;
 import uk.ac.nott.cs.g53dia.library.*;
 import java.util.Random;
 import java.util.ArrayList;
@@ -57,7 +56,7 @@ public class DemoLitterAgent extends LitterAgent {
 	protected List<Cell> wasteStations = new ArrayList<>();
 	protected List<Cell> rechargePoints = new ArrayList<>();
 
-	private void storeMapInfo(Cell[][] view) {
+		private void storeMapInfo(Cell[][] view) {
 		for (int i=0; i != view.length; i++) {
 			for (int j=0; j != view[i].length; j++) {
 				Cell currentView = view[i][j];
@@ -133,7 +132,6 @@ public class DemoLitterAgent extends LitterAgent {
 		if(closestRechargePoint != null) {
 			if (currentState != state.REFUEL && !stateList.contains(state.REFUEL)) {
 				stateList.add(0, currentState);
-
 				
 				cellPoints.add(0, closestRechargePoint);
 				stateList.add(0, state.REFUEL);
