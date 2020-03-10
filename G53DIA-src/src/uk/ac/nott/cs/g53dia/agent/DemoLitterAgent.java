@@ -107,12 +107,12 @@ public class DemoLitterAgent extends LitterAgent {
 	public Action senseAndAct(Cell[][] view, long timestep) {
 		storeMapInfo(view);
 
-		boolean isEqualPosition = false;
+			boolean isEqualPosition = false;
 		if (cellPoints.size() > 0) {
 			isEqualPosition = getCurrentCell(view).getPoint().equals(cellPoints.get(0).getPoint());
 		}
 		if (stateList.isEmpty() || (currentState == state.MOVE_TO_POINT && (stateList.get(0) == state.PICKUP_RECYCLING
-				|| stateList.get(0) == state.PICKUP_WASTE) && !isEqualPosition)) {
+				|| stateList.get(0) == state.PICKUP_WASTE) && !isEqualPosition) && getLitterLevel() < 200) {
 			deliberative = new Deliberative();
 
 			deliberative.setVars(getChargeLevel(), MAX_LITTER - getLitterLevel(), 10000 - timestep,

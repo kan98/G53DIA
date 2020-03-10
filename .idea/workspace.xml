@@ -3,23 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4416061e-2a98-4adf-bf08-f2343b18ce51" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/G53DIA.jar" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/G53DIA.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent$state.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent$state.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/Deliberative.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/Deliberative.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/Helpers.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/Helpers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/deliberative/Deliberative$focus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/production/G53DIA-src/uk/ac/nott/cs/g53dia/agent/deliberative/Deliberative.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/Helpers.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/Helpers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/Reactive.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/Reactive.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/deliberative/Deliberative.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/agent/deliberative/Deliberative.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/library/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/library/Task.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/simulator/Evaluator.class" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/bin/uk/ac/nott/cs/g53dia/simulator/Evaluator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/Deliberative.java" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/Deliberative.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/DemoLitterAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/Helpers.java" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/Helpers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/deliberative/Deliberative.java" beforeDir="false" afterPath="$PROJECT_DIR$/G53DIA-src/src/uk/ac/nott/cs/g53dia/agent/Deliberative.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1YG0yLy3nANxF7Wdcb9MfhS2jOP" />
@@ -123,6 +115,8 @@
       <workItem from="1583508310803" duration="9638000" />
       <workItem from="1583669363040" duration="15859000" />
       <workItem from="1583756083331" duration="1173000" />
+      <workItem from="1583777200574" duration="8886000" />
+      <workItem from="1583843025083" duration="1571000" />
     </task>
     <servers />
   </component>
@@ -166,38 +160,42 @@
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
     <state x="690" y="258" width="530" height="605" key="FileChooserDialogImpl/0.34.1920.1046@0.34.1920.1046" timestamp="1583267173268" />
-    <state width="1862" height="259" key="GridCell.Tab.0.bottom" timestamp="1583758067873">
+    <state width="1862" height="259" key="GridCell.Tab.0.bottom" timestamp="1583790443345">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="259" key="GridCell.Tab.0.bottom/0.34.1920.1046@0.34.1920.1046" timestamp="1583758067873" />
-    <state width="1862" height="259" key="GridCell.Tab.0.center" timestamp="1583758067871">
+    <state width="1862" height="259" key="GridCell.Tab.0.bottom/0.34.1920.1046@0.34.1920.1046" timestamp="1583790443345" />
+    <state width="1862" height="259" key="GridCell.Tab.0.center" timestamp="1583790443345">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="259" key="GridCell.Tab.0.center/0.34.1920.1046@0.34.1920.1046" timestamp="1583758067871" />
-    <state width="1862" height="259" key="GridCell.Tab.0.left" timestamp="1583758067870">
+    <state width="1862" height="259" key="GridCell.Tab.0.center/0.34.1920.1046@0.34.1920.1046" timestamp="1583790443345" />
+    <state width="1862" height="259" key="GridCell.Tab.0.left" timestamp="1583790443345">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="259" key="GridCell.Tab.0.left/0.34.1920.1046@0.34.1920.1046" timestamp="1583758067870" />
-    <state width="1862" height="259" key="GridCell.Tab.0.right" timestamp="1583758067872">
+    <state width="1862" height="259" key="GridCell.Tab.0.left/0.34.1920.1046@0.34.1920.1046" timestamp="1583790443345" />
+    <state width="1862" height="259" key="GridCell.Tab.0.right" timestamp="1583790443345">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="259" key="GridCell.Tab.0.right/0.34.1920.1046@0.34.1920.1046" timestamp="1583758067872" />
-    <state width="1862" height="218" key="GridCell.Tab.1.bottom" timestamp="1583711701922">
+    <state width="1862" height="259" key="GridCell.Tab.0.right/0.34.1920.1046@0.34.1920.1046" timestamp="1583790443345" />
+    <state width="1862" height="218" key="GridCell.Tab.1.bottom" timestamp="1583788453809">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.1.bottom/0.34.1920.1046@0.34.1920.1046" timestamp="1583711701922" />
-    <state width="1862" height="218" key="GridCell.Tab.1.center" timestamp="1583711701921">
+    <state width="1862" height="218" key="GridCell.Tab.1.bottom/0.34.1920.1046@0.34.1920.1046" timestamp="1583788453809" />
+    <state width="1862" height="218" key="GridCell.Tab.1.center" timestamp="1583788453808">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.1.center/0.34.1920.1046@0.34.1920.1046" timestamp="1583711701921" />
-    <state width="1862" height="218" key="GridCell.Tab.1.left" timestamp="1583711701921">
+    <state width="1862" height="218" key="GridCell.Tab.1.center/0.34.1920.1046@0.34.1920.1046" timestamp="1583788453808" />
+    <state width="1862" height="218" key="GridCell.Tab.1.left" timestamp="1583788453808">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.1.left/0.34.1920.1046@0.34.1920.1046" timestamp="1583711701921" />
-    <state width="1862" height="218" key="GridCell.Tab.1.right" timestamp="1583711701922">
+    <state width="1862" height="218" key="GridCell.Tab.1.left/0.34.1920.1046@0.34.1920.1046" timestamp="1583788453808" />
+    <state width="1862" height="218" key="GridCell.Tab.1.right" timestamp="1583788453809">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>
-    <state width="1862" height="218" key="GridCell.Tab.1.right/0.34.1920.1046@0.34.1920.1046" timestamp="1583711701922" />
+    <state width="1862" height="218" key="GridCell.Tab.1.right/0.34.1920.1046@0.34.1920.1046" timestamp="1583788453809" />
+    <state x="455" y="230" width="1000" height="661" key="Vcs.Push.Dialog.v2" timestamp="1583851095915">
+      <screen x="0" y="34" width="1920" height="1046" />
+    </state>
+    <state x="455" y="230" width="1000" height="661" key="Vcs.Push.Dialog.v2/0.34.1920.1046@0.34.1920.1046" timestamp="1583851095915" />
     <state x="329" y="209" width="1251" height="703" key="caller.chooser.dialog" timestamp="1583159362336">
       <screen x="0" y="34" width="1920" height="1046" />
     </state>

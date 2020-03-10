@@ -19,7 +19,7 @@ public class Deliberative {
 
     focus currentFocus = focus.NONE;
 
-    int currentCharge, binCapacity;
+    int currentCharge, binCapacity, litterLevel;
     long timeLeft;
     List<Cell> recyclingBins, wasteBins, recyclingPlants, wastePlants, rechargePoints;
 
@@ -57,22 +57,26 @@ public class Deliberative {
             currentFocus = focus.RECYCLING;
         }
 
+        this.litterLevel = recyclingLevel + wasteLevel;
+
         search();
     }
 
     private void search() {
-        List<Cell> currentSelection = new ArrayList<>();
         focus tempFocus = currentFocus;
         recyclingBinList = (List<RecyclingBin>)(List<?>) getFilledBins(recyclingBins);
         wasteBinList = (List<WasteBin>)(List<?>) getFilledBins(wasteBins);
 
-        if (tempFocus != focus.WASTE) {
-            getBestRoute(recyclingBinList, null, 0, 0, currentSelection, currentCell.getPoint(), false);
-        }
+        if(litterLevel < binCapacity) {
+            List<Cell> currentSelection = new ArrayList<>();
+            if (tempFocus != focus.WASTE) {
+                getBestRoute(recyclingBinList, null, litterLevel, 0, currentSelection, currentCell.getPoint());
+            }
 
-        currentSelection = new ArrayList<>();
-        if (tempFocus != focus.RECYCLING) {
-            getBestRoute(null, wasteBinList, 0, 0, currentSelection, currentCell.getPoint(),false);
+            currentSelection = new ArrayList<>();
+            if (tempFocus != focus.RECYCLING) {
+                getBestRoute(null, wasteBinList, litterLevel, 0, currentSelection, currentCell.getPoint());
+            }
         }
 
         for (int i=0; i != pointList.size(); i++) {
@@ -85,10 +89,16 @@ public class Deliberative {
         }
 
         if (currentFocus != focus.NONE) {
+            List<Cell> plantsList = null;
             if (currentFocus == focus.RECYCLING) {
-                pointList.add(helpers.findClosest(pointList.get(pointList.size() - 1).getPoint(), recyclingPlants));
+                plantsList = recyclingPlants;
             } else if (currentFocus == focus.WASTE) {
-                pointList.add(helpers.findClosest(pointList.get(pointList.size() - 1).getPoint(), wastePlants));
+                plantsList = wastePlants;
+            }
+            if (pointList.size() > 0) {
+                pointList.add(helpers.findClosest(pointList.get(pointList.size() - 1).getPoint(), plantsList));
+            } else {
+                pointList.add(helpers.findClosest(currentCell.getPoint(), plantsList));
             }
             stateList.add(DemoLitterAgent.state.MOVE_TO_POINT);
             stateList.add(DemoLitterAgent.state.LITTER_DROP_OFF);
@@ -96,90 +106,79 @@ public class Deliberative {
     }
 
     private void getBestRoute(List<RecyclingBin> recyclingBins, List<WasteBin> wasteBins, int currentScore,
-                              int chargeUsed, List<Cell> currentSelection, Point currentPoint, boolean recursion) {
-        if (recyclingBins != null && recyclingBins.size() > 0) {
-            for (int i=0; i < recyclingBins.size(); i++) {
-                if (!recursion) {
-                    currentScore = 0;
-                    chargeUsed = 0;
-                    currentSelection = new ArrayList<>();
-                    currentPoint = this.currentCell.getPoint();
-                    recyclingBins = recyclingBinList;
-                }
-                recursion = false;
-                List<RecyclingBin> tempRecyclingBins = recyclingBins;
-                List<Cell> tempCurrentSelection = currentSelection;
+                              int chargeUsed, List<Cell> currentSelection, Point currentPoint) {
 
-                int tempScore = tempRecyclingBins.get(i).getTask().getRemaining();
-                if (tempScore > binCapacity - currentScore) {
-                    tempScore = binCapacity - currentScore;
-                }
-                Cell binLocation = tempRecyclingBins.get(i);
-                int tempCharge = currentPoint.distanceTo(binLocation.getPoint());
+        if (currentScore < binCapacity) {
+            if (recyclingBins != null && recyclingBins.size() > 0) {
+                float currentBestScore = 0;
+                int currentBestIndex = 0;
+                int tempScore = 0;
+                int tempCharge = 0;
+                Cell binLocation = null;
 
-                if(tempScore + currentScore < binCapacity && tempCharge + chargeUsed <= currentCharge
-                        && tempCharge + chargeUsed <= timeLeft) {
-                    currentScore += tempScore;
-                    chargeUsed += tempCharge;
+                for (int i=0; i < recyclingBins.size(); i++) {
 
-                    tempCurrentSelection.add(binLocation);
-                    tempRecyclingBins.remove(i);
-
-                    if (tempRecyclingBins.size() > 0) {
-                        getBestRoute(tempRecyclingBins, null, currentScore, chargeUsed, tempCurrentSelection, binLocation.getPoint(),true);
+                    tempScore = recyclingBins.get(i).getTask().getRemaining();
+                    if (tempScore > binCapacity - currentScore) {
+                        tempScore = binCapacity - currentScore;
                     }
+                    binLocation = recyclingBins.get(i);
+                    tempCharge = currentPoint.distanceTo(binLocation.getPoint());
 
-                    Cell stationPoint = helpers.findClosest(binLocation.getPoint(), recyclingPlants);
-                    int stationCost = binLocation.getPoint().distanceTo(stationPoint.getPoint());
-                    if (chargeUsed > 0 && (float)currentScore/(chargeUsed+stationCost) >= highestScoreRatio) {
-                        highestScoreRatio = (float)currentScore/(chargeUsed+stationCost);
-                        pointList = tempCurrentSelection;
-                        currentFocus = focus.RECYCLING;
+                    if ((float)tempScore/tempCharge > currentBestScore) {
+                        currentBestScore = (float)tempScore/tempCharge;
+                        currentBestIndex = i;
                     }
+                }
+                currentSelection.add(recyclingBins.get(currentBestIndex));
+                recyclingBins.remove(currentBestIndex);
+                currentScore += tempScore;
+                chargeUsed += tempCharge;
+                if (recyclingBins.size() > 0 && currentScore <= binCapacity) {
+                    getBestRoute(recyclingBins, null, currentScore, chargeUsed, currentSelection, binLocation.getPoint());
+                }
+                Cell closestPlant = helpers.findClosest(binLocation.getPoint(), recyclingPlants);
+                int stationCost = binLocation.getPoint().distanceTo(closestPlant.getPoint());
+                if ((float)currentScore/(chargeUsed+stationCost) > highestScoreRatio && currentScore <= binCapacity) {
+                    highestScoreRatio = (float)currentScore/(chargeUsed+stationCost);
+                    pointList = currentSelection;
+                    currentFocus = focus.RECYCLING;
                 }
             }
-        }
 
-        if (wasteBins != null && wasteBins.size() > 0) {
+            if (wasteBins != null && wasteBins.size() > 0) {
+                float currentBestScore = 0;
+                int currentBestIndex = 0;
+                int tempScore = 0;
+                int tempCharge = 0;
+                Cell binLocation = null;
+                for (int i=0; i < wasteBins.size(); i++) {
 
-            for (int i=0; i < wasteBins.size(); i++) {
-                if (!recursion) {
-                    currentScore = 0;
-                    chargeUsed = 0;
-                    currentSelection = new ArrayList<>();
-                    currentPoint = this.currentCell.getPoint();
-                    wasteBins = wasteBinList;
-                }
-                recursion = false;
-                List<WasteBin> tempWasteBins = wasteBins;
-                List<Cell> tempCurrentSelection = currentSelection;
-
-                int tempScore = tempWasteBins.get(i).getTask().getRemaining();
-                if (tempScore > binCapacity - currentScore) {
-                    tempScore = binCapacity - currentScore;
-                }
-                Cell binLocation = tempWasteBins.get(i);
-                int tempCharge = currentPoint.distanceTo(binLocation.getPoint());
-
-                if(tempScore + currentScore < binCapacity && tempCharge + chargeUsed <= currentCharge
-                        && tempCharge + chargeUsed <= timeLeft) {
-                    currentScore += tempScore;
-                    chargeUsed += tempCharge;
-
-                    tempCurrentSelection.add(binLocation);
-                    tempWasteBins.remove(i);
-
-                    if (tempWasteBins.size() > 0) {
-                        getBestRoute(null, tempWasteBins, currentScore, chargeUsed, tempCurrentSelection, binLocation.getPoint(), true);
+                    tempScore = wasteBins.get(i).getTask().getRemaining();
+                    if (tempScore > binCapacity - currentScore) {
+                        tempScore = binCapacity - currentScore;
                     }
+                    binLocation = wasteBins.get(i);
+                    tempCharge = currentPoint.distanceTo(binLocation.getPoint());
 
-                    Cell stationPoint = helpers.findClosest(binLocation.getPoint(), wastePlants);
-                    int stationCost = binLocation.getPoint().distanceTo(stationPoint.getPoint());
-                    if (chargeUsed > 0 && (float)currentScore/(chargeUsed+stationCost) >= highestScoreRatio) {
-                        highestScoreRatio = (float)currentScore/(chargeUsed+stationCost);
-                        pointList = tempCurrentSelection;
-                        currentFocus = focus.WASTE;
+                    if ((float)tempScore/tempCharge > currentBestScore) {
+                        currentBestScore = (float)tempScore/tempCharge;
+                        currentBestIndex = i;
                     }
+                }
+                currentSelection.add(wasteBins.get(currentBestIndex));
+                wasteBins.remove(currentBestIndex);
+                currentScore += tempScore;
+                chargeUsed += tempCharge;
+                if (wasteBins.size() > 0 && currentScore <= binCapacity) {
+                    getBestRoute(null, wasteBins, currentScore, chargeUsed, currentSelection, binLocation.getPoint());
+                }
+                Cell closestPlant = helpers.findClosest(binLocation.getPoint(), wastePlants);
+                int stationCost = binLocation.getPoint().distanceTo(closestPlant.getPoint());
+                if ((float)currentScore/(chargeUsed+stationCost) > highestScoreRatio && currentScore <= binCapacity) {
+                    highestScoreRatio = (float)currentScore/(chargeUsed+stationCost);
+                    pointList = currentSelection;
+                    currentFocus = focus.WASTE;
                 }
             }
         }
