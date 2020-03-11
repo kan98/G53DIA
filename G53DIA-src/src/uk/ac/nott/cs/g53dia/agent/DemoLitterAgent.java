@@ -6,29 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A simple example LitterAgent
- * 
- * @author Julian Zappala
- */
-/*
- * Copyright (c) 2011 Julian Zappala
- * 
- * See the file "license.terms" for information on usage and redistribution of
- * this file, and for a DISCLAIMER OF ALL WARRANTIES.
+ * This is the main agent class which extends the LitterAgent class.
+ *
+ * The class uses the other classes in the agent package to output appropriate actions for the agent.
+ *
  */
 public class DemoLitterAgent extends LitterAgent {
 
-	public DemoLitterAgent() {
-		this(new Random());
-	}
-
-	/**
-	 * The tanker implementation makes random moves. For reproducibility, it
-	 * can share the same random number generator as the environment.
-	 * 
-	 * @param r
-	 *            The random number generator.
-	 */
 	public DemoLitterAgent(Random r) {
 		this.r = r;
 	}
@@ -38,7 +22,7 @@ public class DemoLitterAgent extends LitterAgent {
 
 	protected state currentState = state.FORAGE;
 
-	public enum state {
+	protected enum state {
 		FORAGE,
 		MOVE_TO_POINT,
 		PICKUP_WASTE,
@@ -56,7 +40,14 @@ public class DemoLitterAgent extends LitterAgent {
 	protected List<Cell> wasteStations = new ArrayList<>();
 	protected List<Cell> rechargePoints = new ArrayList<>();
 
-		private void storeMapInfo(Cell[][] view) {
+	/**
+	 * This method is called at every timestep.
+	 * It stores new bins, stations and recharge points it doesn't have saved into the relevent lists.
+	 *
+	 * @param view The 30x30 view scope of cells the agent can see.
+	 *
+	 */
+	private void storeMapInfo(Cell[][] view) {
 		for (int i=0; i != view.length; i++) {
 			for (int j=0; j != view[i].length; j++) {
 				Cell currentView = view[i][j];
@@ -75,6 +66,14 @@ public class DemoLitterAgent extends LitterAgent {
 		}
 	}
 
+	/**
+	 * This method checks if the agent has completed the current action.
+	 * If the action is completed, the next state on the stateList will be set as the currentState.
+	 *
+	 * @param view The 30x30 view scope of cells the agent can see.
+	 * @return The new currentState the agent is now on.
+	 *
+	 */
 	private state getNextState(Cell[][] view) {
 		boolean isEqualPosition = false;
 		if (currentState == state.MOVE_TO_POINT) {
@@ -99,10 +98,14 @@ public class DemoLitterAgent extends LitterAgent {
 		}
 	}
 
-	/*
-	 * The following is a simple demonstration of how to write a tanker. The
-	 * code below is very stupid and simply moves the tanker randomly until the
-	 * charge agt is half full, at which point it returns to a charge pump.
+	/**
+	 * This method is called by the simulator or evaluator in each timestep.
+	 * This method uses every other class and method in the agent packageto figure out an appropriate action output.
+	 *
+	 * @param view The 30x30 view scope of cells the agent can see.
+	 * @param timestep The timestep the run is currently on.
+	 * @return The action the agent should complete next.
+	 *
 	 */
 	public Action senseAndAct(Cell[][] view, long timestep) {
 		storeMapInfo(view);
@@ -117,7 +120,7 @@ public class DemoLitterAgent extends LitterAgent {
 
 			deliberative.setVars(getChargeLevel(), MAX_LITTER - getLitterLevel(), 10000 - timestep,
 					getRecyclingLevel(), getWasteLevel(), recyclingBins, wasteBins, recyclingStations,
-					wasteStations, rechargePoints, getCurrentCell(view));
+					wasteStations, getCurrentCell(view));
 
 			if (deliberative.getStateList().size() > 0) {
 				if (currentState == state.MOVE_TO_POINT) {

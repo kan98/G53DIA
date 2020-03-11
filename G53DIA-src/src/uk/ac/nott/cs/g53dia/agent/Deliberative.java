@@ -10,34 +10,45 @@ import uk.ac.nott.cs.g53dia.library.WasteBin;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class handles the deliberative component of the agent.
+ *
+ * An object of the class is created in the DemoLitterAgent to help plan actions for the agent.
+ *
+ */
 public class Deliberative {
-    public enum focus {
+    protected enum focus {
         NONE,
         WASTE,
         RECYCLING
     }
 
-    focus currentFocus = focus.NONE;
+    private focus currentFocus = focus.NONE;
 
-    int currentCharge, binCapacity;
-    long timeLeft;
-    List<Cell> recyclingBins, wasteBins, recyclingPlants, wastePlants, rechargePoints;
+    private int currentCharge, binCapacity;
+    private long timeLeft;
+    private List<Cell> recyclingBins, wasteBins, recyclingPlants, wastePlants;
 
-    List<RecyclingBin> recyclingBinList;
-    List<WasteBin> wasteBinList;
+    private List<RecyclingBin> recyclingBinList;
+    private List<WasteBin> wasteBinList;
 
-    Cell currentCell;
+    private Cell currentCell;
 
-    List<DemoLitterAgent.state> stateList = new ArrayList<>();
-    List<Cell> pointList = new ArrayList<>();
+    private List<DemoLitterAgent.state> stateList = new ArrayList<>();
+    private List<Cell> pointList = new ArrayList<>();
 
-    float highestScoreRatio = -1000;
+    private float highestScoreRatio = -1000;
 
-    Helpers helpers = new Helpers();
+    private Helpers helpers = new Helpers();
 
-    public void setVars(int currentCharge, int binCapacity, long timeLeft, int recyclingLevel, int wasteLevel,
+    /**
+     * This method is called by the senseAndAct method from the DemoLitterAgent class for each timestep.
+     * The purpose of this is to pass in all the agent state and our internal representation to be used for route planning.
+     *
+     */
+    protected void setVars(int currentCharge, int binCapacity, long timeLeft, int recyclingLevel, int wasteLevel,
                         List<Cell> recyclingBins, List<Cell> wasteBins, List<Cell> recyclingPlants,
-                        List<Cell> wastePlants, List<Cell> rechargePoints, Cell currentCell) {
+                        List<Cell> wastePlants, Cell currentCell) {
 
         this.currentCharge = currentCharge;
         this.binCapacity = binCapacity;
@@ -47,7 +58,6 @@ public class Deliberative {
         this.wasteBins = wasteBins;
         this.recyclingPlants = recyclingPlants;
         this.wastePlants = wastePlants;
-        this.rechargePoints = rechargePoints;
 
         this.currentCell = currentCell;
 
@@ -60,6 +70,14 @@ public class Deliberative {
         search();
     }
 
+    /**
+     * This method is called by the setVars method.
+     * It gets all the bins that aren't empty and calls the getBestRoute method to plan the best route for the agent.
+     * 
+     * The method will take the list of bins from the getBestRoute method and create actions for them to add to stateList.
+     * The method will also add a litter drop off action to the closest respective station into the stateList queue.
+     *
+     */
     private void search() {
         List<Cell> currentSelection = new ArrayList<>();
         focus tempFocus = currentFocus;
@@ -95,6 +113,11 @@ public class Deliberative {
         }
     }
 
+    /**
+     * Recursive method that does a depth first search to output the best route for the agent.
+     * The output is a list of either recycling or waste bins that the search method can add actual agent states for.
+     *
+     */
     private void getBestRoute(List<RecyclingBin> recyclingBins, List<WasteBin> wasteBins, int currentScore,
                               int chargeUsed, List<Cell> currentSelection, Point currentPoint, boolean recursion) {
         if (recyclingBins != null && recyclingBins.size() > 0) {
@@ -185,7 +208,14 @@ public class Deliberative {
         }
     }
 
-    private List<Cell> getFilledBins(List<Cell> bins) {
+    /**
+     * Goes through a list of cells of either waste or recycling bins and return a list of bins which aren't empty.
+     *
+     * @param bins A list of Cell objects of either waste or recycling bins.
+     * @return A list of Cell objects of either waste or recycling bins that have non-empty tasks in them.
+     *
+     */
+    protected List<Cell> getFilledBins(List<Cell> bins) {
         List<Cell> binList = new ArrayList<>();
         for (Cell bin : bins) {
             if (bin instanceof WasteBin) {
@@ -203,15 +233,11 @@ public class Deliberative {
         return binList;
     }
 
-    public List<DemoLitterAgent.state> getStateList() {
+    protected List<DemoLitterAgent.state> getStateList() {
         return stateList;
     }
 
-    public List<Cell> getPointList() {
+    protected List<Cell> getPointList() {
         return pointList;
-    }
-
-    public focus getCurrentFocus() {
-        return currentFocus;
     }
 }
